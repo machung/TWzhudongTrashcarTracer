@@ -1,6 +1,6 @@
 var request = require('request');
 var cheerio = require('cheerio');
-var fs = require('fs');
+var fileService = require('fs');
 var url = require('url');
 
 module.exports = function(onsuccess, onerror){
