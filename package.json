@@ -1,0 +1,19 @@
+{
+  "name": "trash-car-map",
+  "version": "1.0.0",
+  "description": "Trace Hsinchu trash car location and show on the google map.",
+  "main": "app.js",
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "express": "^4.13.4",
+    "fs": "^0.0.2",
+    "request": "^2.67.0",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "machung",
+  "license": "ISC"
+}
