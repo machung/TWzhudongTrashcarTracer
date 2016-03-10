@@ -18,6 +18,7 @@ app.get('/api/trashcar/getloc', function(req, res){
 		});
 });
 
-app.listen(8888, function(){
+var port = process.env.PORT || 8888;
+app.listen(port, function(){
 	console.log('Example app listening on port 8888..');
 });
