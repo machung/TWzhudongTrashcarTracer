@@ -45,56 +45,37 @@
       </div>
     </nav>
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqVx5WeUcumRQTGnUMyJzKbHDNCtWljCM"></script>
+
     <div class="container" style="margin-top: 70px" role="main">    
       <div ng-controller="trashcarLocatorCtrl as vm">  
-        <div id="map"></div>      
+        <div class="row" style="margin-bottom: 10px">
+          <div class="col-md-6">
+            <div class="input-group">
+              <input type="text" class="form-control" name="address" ng-model="vm.address"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-primary" ng-click="vm.setCenter()">Set center</button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div id="map"></div>        
       </div>
     </div><!-- /.container -->
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqVx5WeUcumRQTGnUMyJzKbHDNCtWljCM"></script>
     
     <script>
       var map = null;
+
       initMap();
       
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-            //center: {lat: -34.397, lng: 150.644},
             zoom: 15
         });
+      }        
 
-        var geocoder = new google.maps.Geocoder();
-        geocodeAddress(geocoder);
-      }
       
-      function geocodeAddress(geocoder) { 
-        var address = '台灣新竹縣竹東鎮中興路四段1042巷21號2樓';      
-        geocoder.geocode({'address': address}
-          , function(results, status) {
-            if (status === google.maps.GeocoderStatus.OK) {
-              map.setCenter(results[0].geometry.location);
-              var image = {
-                  url: 'images/home_marker.png',
-                  // This marker is 20 pixels wide by 32 pixels high.
-                  size: new google.maps.Size(200, 200),
-                  scaledSize: new google.maps.Size(50, 60),
-                  // The origin for this image is (0, 0).
-                  origin: new google.maps.Point(0, 0),
-                  // The anchor for this image is the base of the flagpole at (0, 32).
-                  anchor: new google.maps.Point(0, 60)
-              };
-              
-              var marker = new google.maps.Marker({
-                map: map,
-                position: results[0].geometry.location,
-                title: 'My home',
-                icon: image
-              });
-            } else {
-                alert('Geocode was not successful for the following reason: ' + status);
-            }
-          });
-      }
     </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

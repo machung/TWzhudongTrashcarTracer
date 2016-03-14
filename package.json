@@ -2,7 +2,7 @@
   "name": "trash-car-map",
   "version": "1.0.0",
   "description": "Trace Hsinchu trash car location and show on the google map.",
-  "main": "app.js",
+  "main": "server.js",
   "dependencies": {
     "cheerio": "^0.19.0",
     "express": "^4.13.4",
