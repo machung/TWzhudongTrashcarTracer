@@ -25,7 +25,7 @@ module.exports = function(onsuccess, onerror){
             	var tdList = $(row).children("td");
             	if(typeof(tdList) !== 'undefined' && tdList != null & tdList.length > 0){
             		var data = {};    		
-            		data.vehicalNumbrPlate = $(tdList[0]).text().trim();
+            		data.vehicalNumberPlate = $(tdList[0]).text().trim();
             		data.carId = $(tdList[1]).text().trim();
             		data.type = $(tdList[2]).text().trim();
             		data.range = $(tdList[3]).text().trim();
